@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autonomous Colour-Sorting Robot | Sara Miller</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">Sara Miller</a>
+
+            <div class="nav-links">
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#skills">Skills</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="project-detail">
+
+        <section class="project-hero">
+            <div class="project-detail-content">
+                <div class="project-hero-copy">
+                    <p class="eyebrow">PROJECT 05 · MECHATRONIC SYSTEM DESIGN</p>
+                    <h1>Autonomous Colour-Sorting Robot</h1>
+                    <p class="project-role">A self-powered robot designed to navigate, collect, classify, and sort coloured objects within a 120-second challenge.</p>
+                    <a href="#overview" class="text-link">Explore the project <span aria-hidden="true">↓</span></a>
+                </div>
+
+                <figure class="project-hero-image">
+                    <img src="../images/Colour Sorting Robot/Top View Prototype.png" alt="Top view of the autonomous colour-sorting robot prototype">
+                    <figcaption>Autonomous colour-sorting robot prototype</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="project-facts" aria-label="Project facts">
+            <div><span>Project type</span><strong>Second-year mechatronics design</strong></div>
+            <div><span>System</span><strong>Autonomous mobile robot</strong></div>
+            <div><span>Controls</span><strong>ESP32 microcontrollers</strong></div>
+            <div><span>Primary focus</span><strong>Collection and sorting</strong></div>
+        </section>
+
+        <section class="detail-section detail-intro" id="overview">
+            <div class="section-label">01 / Project overview</div>
+            <div>
+                <h2>Building an autonomous collection and sorting system</h2>
+                <p>
+                    The Autonomous Colour-Sorting Robot was a second-year mechatronics design project focused on developing a self-powered robot capable of navigating an area, collecting coloured objects, sorting them by value, and returning them to a base station within 120 seconds.
+                </p>
+                <p>
+                    The robot was controlled using ESP32-based microcontrollers and designed to operate autonomously within an area of up to 25 m2. The project required the integration of mechanical design, electronics, sensors, programming, and rapid prototyping to create a lightweight, serviceable, and reliable system.
+                </p>
+            </div>
+        </section>
+
+        <section class="detail-section project-demo">
+            <div class="section-label">02 / Project demonstration</div>
+            <figure class="demo-video">
+                <video controls preload="metadata" poster="../images/Colour Sorting Robot/Top View Prototype.png" aria-label="Autonomous colour-sorting robot demonstration">
+                    <source src="../images/Colour Sorting Robot/Robot Sorting.mp4" type="video/mp4">
+                </video>
+                <a class="video-fallback" href="../images/Colour Sorting Robot/Robot Sorting.mp4" target="_blank" rel="noopener">Open the video file in a compatible player ↗</a>
+                <figcaption>Prototype demonstration of the robot sorting objects.</figcaption>
+            </figure>
+        </section>
+
+        <section class="detail-section detail-grid detail-split-section">
+            <div>
+                <div class="section-label">03 / My role</div>
+                <p>
+                    As part of the project team, I contributed to the design and development of the robot's mechanical and mechatronic systems. My work involved evaluating alternative concepts for locomotion, collection, navigation, and sorting; developing mechanical components and assemblies in SolidWorks; and supporting the integration of motors, sensors, servos, batteries, and microcontrollers.
+                </p>
+                <p>
+                    I also tested and refined the robot through repeated practical trials, adjusted the control code to improve navigation and colour-recognition performance, and identified design limitations with proposed improvements to the mechanical and software systems.
+                </p>
+            </div>
+            <div class="technical-list">
+                <div class="section-label">Skills demonstrated</div>
+                <ul>
+                    <li>SolidWorks CAD modelling</li>
+                    <li>3D-printed prototyping</li>
+                    <li>Sensor and actuator integration</li>
+                    <li>Autonomous navigation</li>
+                    <li>Colour sensing and classification</li>
+                    <li>Servo and motor control</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="detail-section equipment-section">
+            <div class="section-label">04 / Design and development</div>
+            <p class="section-description">
+                The final design used a two-wheel rear-drive system with a central ball support for manoeuvrability. A rotating combine-style header collected objects from the floor as the robot moved. This replaced an earlier robotic-arm concept, reducing the robot's weight, complexity, and number of moving parts.
+            </p>
+            <p class="section-description">
+                Collected objects travelled through a funnel and ramp system, allowing them to pass individually beneath a colour sensor. Based on the detected colour, a servo motor directed each object into either the high-value or low-value storage compartment.
+            </p>
+        </section>
+
+        <section class="detail-section detail-grid detail-split-section">
+            <div>
+                <div class="section-label">05 / Testing and validation</div>
+                <h2>Testing the complete system</h2>
+                <p>
+                    The completed robot underwent testing of its main subsystems, including locomotion accuracy and repeatability, ultrasonic sensor performance, base-station detection, colour recognition and sorting accuracy, and overall system integration.
+                </p>
+                <p>
+                    Locomotion testing involved repeatedly following a marked route and reaching designated floor markers. Wheel-speed checks confirmed that inconsistent motor speeds were not the primary cause of drifting. Instead, the positioning and loading of the ball drive were identified as more significant factors.
+                </p>
+                <p>
+                    The colour-sorting system was tested using objects with different colours, sizes, and hues. Sensor readings were monitored through the Arduino IDE serial monitor, allowing the sorting thresholds and code to be adjusted under different lighting conditions.
+                </p>
+                <figure class="testing-results">
+                    <img src="../images/Colour Sorting Robot/Results.png" alt="Results from testing the autonomous colour-sorting robot">
+                    <figcaption>Testing results across the sorting trials.</figcaption>
+                </figure>
+            </div>
+            <div class="technical-list">
+                <div class="section-label">Measured results</div>
+                <ul>
+                    <li><strong>45</strong> sorting trials</li>
+                    <li><strong>90%</strong> average overall sorting accuracy</li>
+                    <li><strong>82%</strong> average green-object identification accuracy</li>
+                    <li>Performance varied under changing lighting conditions</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="detail-section detail-grid detail-split-section">
+            <div>
+                <div class="section-label">06 / Challenges and problem-solving</div>
+                <h2>Improving navigation, collection, and recognition</h2>
+                <p>
+                    The robot initially experienced drifting and inconsistent turns. Physical testing of the wheel speeds, drive configuration, and ball-drive placement showed that repositioning the ball drive improved turning behaviour and path accuracy.
+                </p>
+                <p>
+                    The initial robotic-arm collection concept was rejected because of its weight, complexity, and motor-load requirements. Replacing it with a rotating combine header simplified the design and improved collection efficiency.
+                </p>
+                <p>
+                    Colour recognition was affected by environmental lighting, requiring repeated calibration of sensor thresholds and refinement of the control code. The ultrasonic return-to-base system also highlighted the limitations of relying on a single sensor for navigation.
+                </p>
+            </div>
+            <div class="technical-list">
+                <div class="section-label">Design decisions</div>
+                <ul>
+                    <li>Repositioned the ball drive to improve turning</li>
+                    <li>Replaced the robotic arm with a rotating header</li>
+                    <li>Calibrated colour thresholds for changing light</li>
+                    <li>Identified the need for a multi-sensor return system</li>
+                </ul>
+            </div>
+        </section>
+
+        <section class="detail-section detail-outcome">
+            <div class="section-label">07 / Reflection</div>
+            <div>
+                <p>
+                    This project provided practical experience in developing an integrated autonomous system from an initial problem statement through concept selection, prototyping, testing, and evaluation. It demonstrated the importance of considering mechanical, electrical, and software requirements together rather than designing each subsystem in isolation.
+                </p>
+                <p>
+                    A key learning outcome was the value of iterative testing. Issues such as drifting, sensor variation, and object-handling problems were not fully apparent during the initial design stages and were identified through practical trials. Testing therefore informed changes to both the physical design and the control code.
+                </p>
+                <p>
+                    The project also reinforced the importance of designing for reliability and maintainability. The final robot performed effectively, but the identified limitations showed that sensor placement, environmental conditions, wire management, and service access are important factors in developing a robust autonomous machine.
+                </p>
+            </div>
+        </section>
+
+        <div class="back-link-container">
+            <a href="../index.html#projects" class="button primary-button">
+                ← Back to Projects
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Sara Miller. Mechatronic Systems Engineering.</p>
+    </footer>
+
+    <script src="../image-viewer.js"></script>
+
+</body>
+</html>

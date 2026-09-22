@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> C-Arm Fluoroscopy Simulator | Sara Miller</title>
+    <link rel="stylesheet" href="../style.css">
+</head>
+
+<body>
+
+    <header>
+        <nav class="navbar">
+            <a href="../index.html" class="logo">Sara Miller</a>
+
+            <div class="nav-links">
+                <a href="../index.html#about">About</a>
+                <a href="../index.html#projects">Projects</a>
+                <a href="../index.html#skills">Skills</a>
+                <a href="../index.html#contact">Contact</a>
+            </div>
+        </nav>
+
+    </header>
+
+    <main class="project-detail">
+
+        <section class="project-hero">
+            <div class="project-detail-content">
+                <div class="project-hero-copy">
+                    <p class="eyebrow">PROJECT 02 · MECHATRONIC SYSTEMS</p>
+                    <h1>Miniature C-Arm Fluoroscopy Simulator</h1>
+                    <p class="project-role">A three-axis mechatronic system developed for the Sensors and Actuators course at the University of Western Ontario.</p>
+                    <a class="report-link" href="https://github.com/Smill97/MSE-3302-C-Arm-Fluoroscopy/blob/main/Group10_MSE3302_ProjectReport.ipynb" target="_blank" rel="noopener">
+                        <span class="report-link-label">Full project report</span>
+                        <strong>View the Full Project Report on GitHub <span aria-hidden="true">↗</span></strong>
+                    </a>
+                    <a href="#overview" class="text-link">Explore the project <span aria-hidden="true">↓</span></a>
+                </div>
+
+                <figure class="project-hero-image">
+                    <img src="../images/C-Arm/C-Arm Cad.png" alt="CAD model of the miniature C-arm fluoroscopy simulator">
+                    <figcaption>CAD model of the miniature C-arm simulator</figcaption>
+                </figure>
+            </div>
+        </section>
+
+        <section class="project-facts" aria-label="Project facts">
+            <div><span>Course</span><strong>MSE 3302 - Sensors and Actuators</strong></div>
+            <div><span>Completed at</span><strong>University of Western Ontario</strong></div>
+            <div><span>System</span><strong>Three-axis mechatronic design</strong></div>
+            
+        </section>
+
+        <section class="detail-section detail-intro" id="overview">
+            <div class="section-label">01 / Project overview</div>
+            <div>
+                <h2>Project overview</h2>
+                <p>
+Designed a 3D-printed C-arm fluoroscopy simulator as a way to provide a portable and cost-effective alternative for medical training and equipment demonstrations. The system replicated three degrees of freedom using stepper motors, rack-and-pinion mechanisms, an Arduino Nano ESP32, accelerometer feedback, and wireless control. 
+The final prototype demonstrated repeatable positioning, preset movements, motion limits, emergency stopping, and real-time control without radiation or full-scale clinical equipment.                </p>
+<p> The simulator was designed to connect with the same type of digital workflow used by real C-arm systems. 
+    The physical model’s accelerometer provides position and orientation data, which can be transmitted to
+     the software to generate corresponding real-time digitally reconstructed radiographs (DRRs).
+      As the user moves the C-arm, the software updates the displayed image to reflect the selected 
+      viewing angle and position, such as anteroposterior, lateral, or oblique views.</p>
+      <p>This creates a link between the mechanical movement of the simulator and the imaging software used to represent 
+        clinical procedures. Although the prototype does not produce real X-rays, it reproduces the positioning and visualization process in a safe, portable format. 
+        The system could also be integrated with existing medical-imaging or training software through wireless communication, serial data, or an application programming 
+        interface (API), allowing the simulator to function as a hardware controller for virtual fluoroscopy environments. 
+        This would support realistic training without requiring access to a full-size C-arm, radiation equipment, or a clinical operating room.</p>
+
+
+            </div>
+        </section>
+
+        <section class="detail-section methods-section">
+            <div class="section-label">02 / Methods</div>
+            <div class="methods-content">
+                <div>
+                    <h2>Methods</h2>
+                    <p>
+                        This section provides an overview of the process used to develop, build, and test the system.
+                    </p>
+                </div>
+
+            
+
+                <div class="method-subsection">
+                    <h3>Mechanical component design</h3>
+                    <p>
+                    The mechanical components were modelled in SolidWorks before being manufactured using 3D printing.
+                     Rack-and-pinion mechanisms were used to convert motor rotation into controlled linear movement, while 
+                     the frame and support components were designed to minimise weight without compromising rigidity. 
+                     Component clearances, mounting locations, and assembly interfaces were checked in CAD before 
+                     fabrication. The completed parts were assembled and adjusted to ensure smooth, repeatable movement 
+                     across all three axes.                        </p>
+                </div>
+
+                <div class="method-subsection">
+                    <h3>Electrical component design</h3>
+                    <p>
+                    The electrical system was designed around an Arduino Nano ESP32, which controlled the stepper motors, 
+                    accelerometer,wireless communication, and safety functions. Motor drivers were used to control each axis
+                     independently, while limit switches and programmed motion limits helped prevent over-travel. The wiring 
+                     schematic was developed to organise the motor, sensor, and power connections and to simplify troubleshooting during testing.
+                      The accelerometer provided orientation data.                    </p>
+                    <figure class="method-image">
+                        <img src="../images/C-Arm/Electrical diagram.png" alt="Electrical schematic for the miniature C-arm simulator">
+                        <figcaption>Electrical schematic for the simulator</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section class="detail-section detail-grid detail-split-section calculation-section">
+            <div>
+                <div class="section-label">03 / Calculations</div>
+                <h2>Engineering Analysis</h2>
+                <p>
+                To evaluate the motion behaviour of the C-arm simulator, the team developed a simplified mathematical
+                 model of the stepper-motor-driven system. The model was used to assess the relationship between system gain,
+                  stability, response time, and positioning behaviour.
+                The root-locus plot shows how the system poles change as the control gain varies. 
+                This allowed the team to assess system stability and understand the effect of changing the controller
+                 gain.The step-response plot was then used to evaluate the system’s response to a commanded movement. 
+                 The simulated response reached the target position with an approximately 4.5-second settling time and
+                  negligible overshoot. This was appropriate for the simulator because smooth and repeatable positioning was
+                   more important than maximum movement speed.
+                   The analysis also highlighted the limitations of the open-loop stepper-motor approach. Since position 
+                   was estimated using motor steps, missed steps could cause positional drift. The team identified rotary
+                    encoders as a potential future improvement to provide closed-loop feedback and improve positioning accuracy                </p>
+                <div class="calculation-figures">
+                    <figure class="calculation-figure">
+                        <h3>Root Locus of the Second-Order System with Motor Constant Assumption</h3>
+                        <img src="../images/C-Arm/Root Locus of the Second-Order System with Motor Constant Assumption.png" alt="Root-locus analysis of the C-arm motion system">
+                        <figcaption><strong>Root-locus analysis of the C-arm motion system.</strong> The root-locus plot was used to evaluate how changes in system gain affected the system poles and predicted stability.</figcaption>
+                    </figure>
+                    <figure class="calculation-figure">
+                        <h3>Simulated Step Response of the C-Arm Motion System</h3>
+                        <img src="../images/C-Arm/Step responce.png" alt="Simulated step response of the C-arm motion system">
+                        <figcaption><strong> Simulated step response of the C-arm motion system.</strong> The step response predicted an approximately 4.5-second settling time with negligible overshoot, supporting smooth and repeatable positioning.</figcaption>
+                    </figure>
+                </div>
+            </div>
+
+            
+        </section>
+
+        <section class="detail-section software-section">
+            <div class="section-label">04 / Software design</div>
+            <div class="software-grid">
+                <div>
+                    <h2>Software design</h2>
+                    <p>
+The simulator software was developed using an Arduino Nano ESP32 to control the three stepper-motor-driven axes. The program allowed each axis to be operated independently while controlling its direction and speed.Oporators could have each axis move a linear distance if disired or to predefined positions. Serial communication was used to send movement commands and monitor system data.
+
+The software also included preset positions, orientation feedback from the onboard accelerometer, motion limits, and an emergency-stop function. Position data was stored in EEPROM so the system could retain its position after restarting. Together, these features provided controlled, repeatable, and safe operation of the C-arm simulator.                    </p>
+                </div>
+
+                <div class="command-panel">
+                    <h3>Desired commands</h3>
+                    <ul>
+                        <li>Move each axis independently</li>
+                        <li>Control direction and speed</li>
+                        <li>Read and display orientation feedback</li>
+                        <li>Return the system to a known position</li>
+                        <li>Stop motion safely</li>
+                    </ul>
+                </div>
+            </div>
+
+            <a class="github-link" href="https://github.com/Smill97/MSE-3302-C-Arm-Fluoroscopy" target="_blank" rel="noopener">
+                View the project code on GitHub <span aria-hidden="true">↗</span>
+            </a>
+        </section>
+
+        <div class="back-link-container">
+            <a href="../index.html#projects" class="button primary-button">
+                ← Back to Projects
+            </a>
+        </div>
+
+    </main>
+
+    <footer>
+        <p>© 2026 Sara Miller. Mechatronic Systems Engineering.</p>
+    </footer>
+
+    <script src="../image-viewer.js"></script>
+
+</body>
+</html>
