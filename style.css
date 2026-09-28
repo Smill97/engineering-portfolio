@@ -248,11 +248,21 @@ a {
     transform: translateY(-5px);
 }
 
-.project-card img {
-    background: #dfe9ee;
+.project-card-visual {
     height: 190px;
-    object-fit: cover;
     width: 100%;
+}
+
+.project-card-visual--grind {
+    background: #dcebea;
+}
+
+.project-card-visual--sealer {
+    background: #e9e5d8;
+}
+
+.project-card-visual--weld {
+    background: #dce4eb;
 }
 
 .project-card-content {
@@ -481,6 +491,11 @@ footer {
     grid-template-columns: 0.9fr 1.1fr;
     margin: 0 auto;
     max-width: 1116px;
+}
+
+.project-detail-content--text-only {
+    grid-template-columns: minmax(0, 1fr);
+    max-width: 800px;
 }
 
 .project-hero .eyebrow {
